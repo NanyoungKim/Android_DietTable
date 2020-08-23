@@ -1,7 +1,9 @@
 package com.example.diettable;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,7 +47,7 @@ public class FoodActivity  extends FragmentActivity implements MyAdapter.DataTra
     ArrayList<FoodInfo> UniqueFList = new ArrayList<>();
 
 
-    Button btn_order;
+    Button btn_order, btn1, btn2, btn3, btn4, btn5,btn6,btn7,btn8,btn9,btn10, btn11, btn12, btn13, btn14, btn15;
 
     ArrayList<FoodInfo> resultList = new ArrayList<>();
 
@@ -58,11 +60,13 @@ public class FoodActivity  extends FragmentActivity implements MyAdapter.DataTra
 
 
 
-    private String getJsonString() {
+    private String getJsonString(int category) {
         String json = "";
+        String fileName = "recipie_category" + String.valueOf(category) + "json";
+
 
         try {
-            InputStream is = getAssets().open("recipie_new.json");
+            InputStream is = getAssets().open(fileName);
             int fileSize = is.available();
 
             byte[] buffer = new byte[fileSize];
@@ -139,7 +143,8 @@ public class FoodActivity  extends FragmentActivity implements MyAdapter.DataTra
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choice_food1);
-        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        //setContentView(R.layout.fragment1_fragment);
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view1);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -149,13 +154,217 @@ public class FoodActivity  extends FragmentActivity implements MyAdapter.DataTra
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
+
+        btn1 = (Button)findViewById(R.id.btn_category1);
+        btn2= (Button)findViewById(R.id.btn_category2);
+        btn3 = (Button)findViewById(R.id.btn_category3);
+        btn4 = (Button)findViewById(R.id.btn_category4);
+        btn5 = (Button)findViewById(R.id.btn_category5);
+        btn6 = (Button)findViewById(R.id.btn_category6);
+        btn7 = (Button)findViewById(R.id.btn_category7);
+        btn8 = (Button)findViewById(R.id.btn_category8);
+        btn9 = (Button)findViewById(R.id.btn_category9);
+        btn10 = (Button)findViewById(R.id.btn_category10);
+        btn11 = (Button)findViewById(R.id.btn_category11);
+        btn12 = (Button)findViewById(R.id.btn_category12);
+        btn13 = (Button)findViewById(R.id.btn_category13);
+        btn14 = (Button)findViewById(R.id.btn_category14);
+        btn15 = (Button)findViewById(R.id.btn_category15);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment1 = new Fragment1();
+                transaction.replace(R.id.frame, fragment1);
+                String j = getJsonString(1);
+                jsonParsing(j);
+                transaction.commit();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment2 = new Fragment2();
+                transaction.replace(R.id.frame, fragment2);
+                String j = getJsonString(2);
+                jsonParsing(j);
+                transaction.commit();
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment3 = new Fragment3();
+                transaction.replace(R.id.frame, fragment3);
+                String j = getJsonString(3);
+                jsonParsing(j);
+                transaction.commit();
+
+            }
+        });
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment4 = new Fragment4();
+                transaction.replace(R.id.frame, fragment4);
+                transaction.commit();
+
+            }
+        });
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment5 = new Fragment5();
+                transaction.replace(R.id.frame, fragment5);
+                transaction.commit();
+
+            }
+        });
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment6 = new Fragment6();
+                transaction.replace(R.id.frame, fragment6);
+                transaction.commit();
+
+            }
+        });
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment7 = new Fragment7();
+                transaction.replace(R.id.frame, fragment7);
+                transaction.commit();
+
+            }
+        });
+        btn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment8 = new Fragment8();
+                transaction.replace(R.id.frame, fragment8);
+                transaction.commit();
+
+            }
+        });
+        btn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment9 = new Fragment9();
+                transaction.replace(R.id.frame, fragment9);
+                transaction.commit();
+
+            }
+        });
+        btn10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment10 = new Fragment10();
+                transaction.replace(R.id.frame, fragment10);
+                transaction.commit();
+
+            }
+        });
+        btn11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment11 = new Fragment11();
+                transaction.replace(R.id.frame, fragment11);
+                transaction.commit();
+
+            }
+        });
+        btn12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment12 = new Fragment12();
+                transaction.replace(R.id.frame, fragment12);
+                transaction.commit();
+
+            }
+        });
+        btn13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment13 = new Fragment13();
+                transaction.replace(R.id.frame, fragment13);
+                transaction.commit();
+
+            }
+        });
+        btn14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment14 = new Fragment14();
+                transaction.replace(R.id.frame, fragment14);
+                transaction.commit();
+
+            }
+        });
+        btn15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment15 = new Fragment15();
+                transaction.replace(R.id.frame, fragment15);
+                transaction.commit();
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //버튼 검색 & 연결
         btn_order = (Button)findViewById(R.id.btn_order);
 
 
 
-        String j = getJsonString();
-        jsonParsing(j);
+//        String j = getJsonString();
+//        jsonParsing(j);
 
 
         LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver, new IntentFilter("custom-message"));
