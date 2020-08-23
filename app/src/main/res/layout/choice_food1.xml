@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+
+    >
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="식단 만들기"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_weight="0.5"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+
+            <Button
+                android:id="@+id/btn_category1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="밥"
+                />
+            <Button
+                android:id="@+id/btn_category2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="죽"
+                />
+            <Button
+                android:id="@+id/btn_category3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="면"
+                />
+            <Button
+                android:id="@+id/btn_category4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="빵"
+                />
+            <Button
+                android:id="@+id/btn_category5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="국"
+                />
+            <Button
+                android:id="@+id/btn_category6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="조림류"
+                android:textSize="5sp"
+                />
+            <Button
+                android:id="@+id/btn_category7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="찜/쌈"
+                android:textSize="5sp"
+                />
+            <Button
+                android:id="@+id/btn_category8"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="나물/무침"
+                android:textSize="3sp"
+                />
+            <Button
+                android:id="@+id/btn_category9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="볶음"
+                android:textSize="5sp"
+                />
+            <Button
+                android:id="@+id/btn_category10"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="전류"
+                android:textSize="5sp"
+                />
+            <Button
+                android:id="@+id/btn_category11"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="튀김류"
+                android:textSize="5sp"
+                />
+            <Button
+                android:id="@+id/btn_category12"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="구이류"
+                android:textSize="5sp"
+                />
+            <Button
+                android:id="@+id/btn_category13"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="김치"
+                android:textSize="5sp"
+                />
+            <Button
+                android:id="@+id/btn_category14"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="소스"
+                android:textSize="5sp"
+                />
+            <Button
+                android:id="@+id/btn_category15"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="간식류"
+                android:textSize="5sp"
+                />
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbars="vertical"
+        android:layout_weight="9"
+        >
+
+
+
+
+
+
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+
+        <Button
+            android:id="@+id/btn_bucket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:layout_weight="1"
+            android:text="장바구니에 담기"/>
+
+        <Button
+            android:id="@+id/btn_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:layout_weight="1"
+
+
+            android:text="최종 발주하기"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
